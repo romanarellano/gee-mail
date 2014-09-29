@@ -1,18 +1,217 @@
+
 <html>
 	<head>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
-    <script>
+                <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+                <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+                <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+                
+                <link rel="stylesheet" type="text/css" href="style.css">
+                 <script type="text/javascript" src="practice0.js"></script>
+                 <script type="text/javascript"> 
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+      
+         date=[];
+  for (var i = 0; i < 10; i++){
+		var info = new generateMessage();
+                 
+             
+		window.geemails[i]= info.subject;
+                
+                date[i] =info.date;
+              
+                sender[i] =info.sender;
+    document.getElementById(i).innerHTML = window.geemails[i];
+   
+    
+    
+    
+	}; 
+     
+     
+   $("#0").on('click',(function(){
+      $("#0").dialog({
+          width: 500,
+          height: 400,
+          autoOpen:true,
+          show: {
+              effect:"fade"
+          },
+          hide: {
+              effect:"fade"
+          },
+          title: "From:" +sender[0]
+          //position: "center"
+      }); 
+    }));
+    $("#1").on('click',(function(){
+      $("#1").dialog({
+          width: 500,
+          height: 400,
+          autoOpen:true,
+          show: {
+              effect:"fade"
+          },
+          hide: {
+              effect:"fade"
+          },
+          title: "From:" +sender[1]
+          //position: "center"
+      }); 
+    }));
+     $("#2").on('click',(function(){
+      $("body2").dialog({
+          width: 500,
+          height: 400,
+          autoOpen:true,
+          show: {
+              effect:"fade"
+          },
+          hide: {
+              effect:"fade"
+          },
+          title: "From:" +sender[2]
+          //position: "center"
+      }); 
+    }));
+    $("#3").on('click',(function(){
+      $("body3").dialog({
+          width: 500,
+          height: 400,
+          autoOpen:true,
+          show: {
+              effect:"fade"
+          },
+          hide: {
+              effect:"fade"
+          },
+          title: "From:" +sender[3]
+          //position: "center"
+      }); 
+    }));
+    $("#4").on('click',(function(){
+      $("#4").dialog({
+          width: 500,
+          height: 400,
+          autoOpen:true,
+          show: {
+              effect:"fade"
+          },
+          hide: {
+              effect:"fade"
+          },
+          title: "From:" +sender[4]
+          //position: "center"
+      }); 
+    }));
+    $("#5").on('click',(function(){
+      $("#5").dialog({
+          width: 500,
+          height: 400,
+          autoOpen:true,
+          show: {
+              effect:"fade"
+          },
+          hide: {
+              effect:"fade"
+          },
+          title: "From:" +sender[5]
+          //position: "center"
+      }); 
+    }));
+      $("#6").on('click',(function(){
+      $("#6").dialog({
+          width: 500,
+          height: 400,
+          autoOpen:true,
+          show: {
+              effect:"fade"
+          },
+          hide: {
+              effect:"fade"
+          },
+          title: "From:" +sender[6]
+          //position: "center"
+      }); 
+    }));
+    $("#7").on('click',(function(){
+      $("#7").dialog({
+          width: 500,
+          height: 400,
+          autoOpen:true,
+          show: {
+              effect:"fade"
+          },
+          hide: {
+              effect:"fade"
+          },
+          title: "From:" +sender[7]
+          //position: "center"
+      }); 
+    }));
+      $("#8").on('click',(function(){
+      $("#8").dialog({
+          width: 500,
+          height: 400,
+          autoOpen:true,
+          show: {
+              effect:"fade"
+          },
+          hide: {
+              effect:"fade"
+          },
+          title: "From:" +sender[8]
+          //position: "center"
+      }); 
+    }));
+     $("#9").on('click',(function(){
+      $("#9").dialog({
+          width: 500,
+          height: 400,
+          autoOpen:true,
+          show: {
+              effect:"fade"
+          },
+          hide: {
+              effect:"fade"
+          },
+          title: "From:" +sender[9]
+          //position: "center"
+      }); 
+    }));
+
+
+ 
+ 
+ 
+  
+ 
       };
     </script>
+    <title>DevLeague</title>
 	</head>
 	<body>
-		<div class="container" id="main">
-			Build Me!
-		</div>
+		 
+            <div class="container"  id="main">
+                
+                <div id="0"></div> 
+                 <div id="1"></div> 
+                   <div id="2"></div> 
+                 <div id="3"></div> 
+                 <div id="4"></div> 
+                 <div id="5"></div> 
+                   <div id="6"></div> 
+                 <div id="7"></div> 
+                 <div id="8"></div> 
+                 <div id="9"></div> 
+                
+            </div>
+         
+          
+       
+          
 	</body>
 </html>
