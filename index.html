@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html> 
+<html>
 	<head> 
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
@@ -17,7 +17,7 @@
          sub=[];date=[];
   for (var i = 0; i < 10; i++){
 		var info = new generateMessage();
-                 
+                  
              
 	 
                
@@ -39,7 +39,31 @@
     document.getElementsByTagName("p")[i].innerHTML=body[i];
     
 	}; 
+        //function to get new current messages
+        function add_rows(){
+            for (var i = 0; i < 1; i++){
+		var info = new getNewMessage();
+                 
+             
+	 
+               
+                date[i] =info.date;
+                sub[i]= info.subject;
+                sender[i] =info.sender;
+                body[i]=info.body;
+  
+   
+   var table = document.getElementById(i);
+    var row = table.insertRow();
+    var first_cell = row.insertCell(0);
+    var second_cell = row.insertCell(1);
+    var third_cell = row.insertCell(2);
+    first_cell.innerHTML = sender[i];
+    second_cell.innerHTML = sub[i];
+     third_cell.innerHTML = date[i];
     
+        };}
+   
       
    $("#0").on('click',(function(){
       $("#body0").dialog({
@@ -203,9 +227,11 @@
  
 });
 
+  setInterval(function(){
+        add_rows();},10500
+    );
  
- 
-   
+  
  
       };
     </script>
