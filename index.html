@@ -1,48 +1,48 @@
 <!DOCTYPE html>
-<html> 
-	<head>
+<html>
+	<head> 
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
-                <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+                <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
                 <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
                 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-                
+                  
                 <link rel="stylesheet" type="text/css" href="style.css">
                  <script type="text/javascript" src="practice0.js"></script>
                  <script type="text/javascript"> 
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-      
+       
          sub=[];date=[];
   for (var i = 0; i < 10; i++){
 		var info = new generateMessage();
                  
              
-	//	window.geemails[i]= info.subject;
+	 
                
                 date[i] =info.date;
-               sub[i]= info.subject;
+                sub[i]= info.subject;
                 sender[i] =info.sender;
-    
-   // document.getElementById(i).innerHTML = window.geemails[i];
+                body[i]=info.body;
+  
    
    var table = document.getElementById(i);
-    var row = table.insertRow(0);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    cell1.innerHTML = sender[i];
-    cell2.innerHTML = sub[i];
-     cell3.innerHTML = date[i];
+    var row = table.insertRow();
+    var first_cell = row.insertCell(0);
+    var second_cell = row.insertCell(1);
+    var third_cell = row.insertCell(2);
+    first_cell.innerHTML = sender[i];
+    second_cell.innerHTML = sub[i];
+     third_cell.innerHTML = date[i];
     
-    
+    document.getElementsByTagName("p")[i].innerHTML=body[i];
     
 	}; 
     
-      document.getElementById("body").innerHTML= info.body;
+      
    $("#0").on('click',(function(){
-      $("p").dialog({
+      $("#body0").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -52,12 +52,12 @@
           hide: {
               effect:"fade"
           },
-          title: "From:" +sender[0]
-          //position: "center"
+          title: "From: " +sender[0],
+          buttons: [ { text: "Close", click: function() { $( this ).dialog( "close" ); } } ] 
       }); 
     }));
     $("#1").on('click',(function(){
-      $("p").dialog({
+      $("#body1").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -67,12 +67,12 @@
           hide: {
               effect:"fade"
           },
-          title: "From:" +sender[1]
-          //position: "center"
+          title: "From: " +sender[1],
+          buttons: [ { text: "Close", click: function() { $( this ).dialog( "close" ); } } ] 
       }); 
     }));
      $("#2").on('click',(function(){
-      $("p").dialog({
+      $("#body2").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -82,12 +82,12 @@
           hide: {
               effect:"fade"
           },
-          title: "From:" +sender[2]
-          //position: "center"
+          title: "From: " +sender[2],
+          buttons: [ { text: "Close", click: function() { $( this ).dialog( "close" ); } } ] 
       }); 
     }));
     $("#3").on('click',(function(){
-      $("p").dialog({
+      $("#body3").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -97,12 +97,12 @@
           hide: {
               effect:"fade"
           },
-          title: "From:" +sender[3]
-          //position: "center"
+          title: "From: " +sender[3],
+          buttons: [ { text: "Close", click: function() { $( this ).dialog( "close" ); } } ] 
       }); 
     }));
     $("#4").on('click',(function(){
-      $("p").dialog({
+      $("#body4").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -112,12 +112,12 @@
           hide: {
               effect:"fade"
           },
-          title: "From:" +sender[4]
-          //position: "center"
+          title: "From: " +sender[4],
+          buttons: [ { text: "Close", click: function() { $( this ).dialog( "close" ); } } ] 
       }); 
     }));
     $("#5").on('click',(function(){
-      $("p").dialog({
+      $("#body5").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -127,12 +127,12 @@
           hide: {
               effect:"fade"
           },
-          title: "From:" +sender[5]
-          //position: "center"
+          title: "From: " +sender[5],
+          buttons: [ { text: "Close", click: function() { $( this ).dialog( "close" ); } } ] 
       }); 
     }));
       $("#6").on('click',(function(){
-      $("p").dialog({
+      $("#body6").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -142,12 +142,12 @@
           hide: {
               effect:"fade"
           },
-          title: "From:" +sender[6]
-          //position: "center"
+          title: "From: " +sender[6],
+          buttons: [ { text: "Close", click: function() { $( this ).dialog( "close" ); } } ] 
       }); 
     }));
     $("#7").on('click',(function(){
-      $("p").dialog({
+      $("#body7").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -157,12 +157,12 @@
           hide: {
               effect:"fade"
           },
-          title: "From:" +sender[7]
-          //position: "center"
+          title: "From: " +sender[7],
+          buttons: [ { text: "Close", click: function() { $( this ).dialog( "close" ); } } ] 
       }); 
     }));
       $("#8").on('click',(function(){
-      $("p").dialog({
+      $("#body8").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -172,12 +172,12 @@
           hide: {
               effect:"fade"
           },
-          title: "From:" +sender[8]
-          //position: "center"
+          title: "From: " +sender[8],
+          buttons: [ { text: "Close", click: function() { $( this ).dialog( "close" ); } } ] 
       }); 
     }));
      $("#9").on('click',(function(){
-      $("p").dialog({
+      $("#body9").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -187,8 +187,8 @@
           hide: {
               effect:"fade"
           },
-          title: "From:" +sender[9]
-          //position: "center"
+          title: "From: " +sender[9],
+          buttons: [ { text: "Close", click: function() { $( this ).dialog( "close" ); } } ]  
       }); 
     }));
 
@@ -203,7 +203,17 @@
     <title>YAPOO</title>
 	</head>
 	<body>
-            <p id="body"></p>
+            <h1>Gee Mail</h1>
+            <p id="body0"></p>
+             <p id="body1"></p>
+             <p id="body2"></p>
+             <p id="body3"></p>
+             <p id="body4"></p>
+             <p id="body5"></p>
+             <p id="body6"></p>
+             <p id="body7"></p>
+               <p id="body8"></p>
+             <p id="body9"></p>
 		 
             <div class="container"  id="main">
                 

@@ -1,4 +1,7 @@
 
+body{
+    background-color: beige;
+}
 #main{
    // padding:0.3cm 2cm;
    text-align:justify;
@@ -13,6 +16,14 @@
     height:3px;
 }
 #body{
+    display:none;
+}
+h1{
+    text-align:center;
+    font-family: Times New Roman;
+    color:blue;
+}
+p{
     display:none;
 }
     
