@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html> 
 	<head>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
@@ -39,10 +39,10 @@
     
     
 	}; 
-     
-     
+    
+      document.getElementById("body").innerHTML= info.body;
    $("#0").on('click',(function(){
-      $("#0").dialog({
+      $("p").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -57,7 +57,7 @@
       }); 
     }));
     $("#1").on('click',(function(){
-      $("#1").dialog({
+      $("p").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -72,7 +72,7 @@
       }); 
     }));
      $("#2").on('click',(function(){
-      $("#2").dialog({
+      $("p").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -87,7 +87,7 @@
       }); 
     }));
     $("#3").on('click',(function(){
-      $("body3").dialog({
+      $("p").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -102,7 +102,7 @@
       }); 
     }));
     $("#4").on('click',(function(){
-      $("#4").dialog({
+      $("p").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -117,7 +117,7 @@
       }); 
     }));
     $("#5").on('click',(function(){
-      $("#5").dialog({
+      $("p").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -132,7 +132,7 @@
       }); 
     }));
       $("#6").on('click',(function(){
-      $("#6").dialog({
+      $("p").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -147,7 +147,7 @@
       }); 
     }));
     $("#7").on('click',(function(){
-      $("#7").dialog({
+      $("p").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -162,7 +162,7 @@
       }); 
     }));
       $("#8").on('click',(function(){
-      $("#8").dialog({
+      $("p").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -177,7 +177,7 @@
       }); 
     }));
      $("#9").on('click',(function(){
-      $("#9").dialog({
+      $("p").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
@@ -203,6 +203,7 @@
     <title>YAPOO</title>
 	</head>
 	<body>
+            <p id="body"></p>
 		 
             <div class="container"  id="main">
                 

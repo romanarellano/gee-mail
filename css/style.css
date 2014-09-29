@@ -1,24 +1,6 @@
-#sender{
-    left:150px;
-    top:100px;
-    color:green;
-    position:absolute;
-}
 
-#subject{
-    left:150px;
-    top:130px;
-    color:green;
-    position:absolute;
-}
-#date{
-    left:150px;
-    top:150px;
-    color:green;
-    position:absolute;
-}
 #main{
-    padding:0.3cm 2cm;
+   // padding:0.3cm 2cm;
    text-align:justify;
     top:170px;
     color:green;
@@ -27,7 +9,10 @@
     }
  table, td {
     border: 1px solid black;
-    width:70%;
+    width:80em;
+    height:3px;
 }
-
+#body{
+    display:none;
+}
     
