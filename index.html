@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html> 
 	<head> 
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
@@ -192,18 +192,29 @@
       }); 
     }));
 
+  $("#open_box").on('click',function(){
+    $("#box").dialog({
+    width: 500,
+    height:300,
+    modal:true,
+    title: getNewMessage().date,
+    buttons: [ { text: "Close", click: function() { $( this ).dialog( "close" ); } } ]  
+});
+ 
+});
 
  
  
- 
-  
+   
  
       };
     </script>
     <title>YAPOO</title>
 	</head>
 	<body>
-            <h1>Gee Mail</h1>
+            <button id="open_box">Create Message</button>
+            <textarea id="box" rows="8" cols="49"></textarea>
+            <h1>Roman's Gee Mail</h1>
             <p id="body0"></p>
              <p id="body1"></p>
              <p id="body2"></p>
