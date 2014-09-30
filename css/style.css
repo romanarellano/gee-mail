@@ -9,13 +9,19 @@ body{
    
     position:absolute;
     }
-td{ 
+td{   
     border: 2px solid green;
-    width:77em;
+    width:70em;
     height:3px;
-} 
+    text-align:center;
+}
+table{
+   
+    margin-left:70px;
+    width:80%;
+}
 table :hover{
-    background:yellow;
+    background:lightgrey;
 }
 #body{
     display:none;
@@ -34,7 +40,7 @@ p{
 #open_box{
     position:absolute;
     right:30px;
-    margin-top:90px; 
+    margin-top:90px;
 }
 #add_new_rows{
     display:none;
