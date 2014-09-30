@@ -9,10 +9,13 @@ body{
    
     position:absolute;
     }
- table, td {
-    border: 1px solid green;
-    width:79em;
+td{ 
+    border: 2px solid green;
+    width:77em;
     height:3px;
+} 
+table :hover{
+    background:yellow;
 }
 #body{
     display:none;
@@ -24,12 +27,31 @@ h1{
 }
 p{
     display:none;
-}
+}  
 #box{
     display:none;
-}
+} 
 #open_box{
     position:absolute;
-    right:10px;
-    margin-top:60px;
+    right:30px;
+    margin-top:90px; 
 }
+#add_new_rows{
+    display:none;
+}
+#up{
+    font-family:sans-serif;
+    font-weight:bolder;
+   font-size:25px;
+    position:absolute;
+    top:75px;
+    left:70px;
+    color: gold;
+}
+span{
+   // position:relative;
+    font-size:20px;
+    top:60px;
+    left:50px;
+    color:purple;
+} 

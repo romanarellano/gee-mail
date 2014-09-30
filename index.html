@@ -1,82 +1,61 @@
 <!DOCTYPE html>
 <html>
-	<head> 
+	<head>  
+                <meta charset="utf-8">
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
                 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
-                <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
                 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
-                  
+                <script src="//code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
                 <link rel="stylesheet" type="text/css" href="style.css">
                  <script type="text/javascript" src="practice0.js"></script>
                  <script type="text/javascript"> 
-      window.onload = function(){
+      window.onload = function(){ 
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
        
          sub=[];date=[];
   for (var i = 0; i < 10; i++){
-		var info = new generateMessage();
-                  
-             
-	 
-               
+		
+                var info = new generateMessage();
+                 
                 date[i] =info.date;
                 sub[i]= info.subject;
                 sender[i] =info.sender;
                 body[i]=info.body;
   
-   
-   var table = document.getElementById(i);
+   //inserting 2 cells to one row for every table
+    var table = document.getElementById(i);
     var row = table.insertRow();
     var first_cell = row.insertCell(0);
     var second_cell = row.insertCell(1);
     var third_cell = row.insertCell(2);
+    
     first_cell.innerHTML = sender[i];
     second_cell.innerHTML = sub[i];
-     third_cell.innerHTML = date[i];
+    third_cell.innerHTML = date[i];
     
     document.getElementsByTagName("p")[i].innerHTML=body[i];
     
 	}; 
-        //function to get new current messages
-        function add_rows(){
-            for (var i = 0; i < 1; i++){
-		var info = new getNewMessage();
-                 
-             
-	 
-               
-                date[i] =info.date;
-                sub[i]= info.subject;
-                sender[i] =info.sender;
-                body[i]=info.body;
-  
+        
+        
    
-   var table = document.getElementById(i);
-    var row = table.insertRow();
-    var first_cell = row.insertCell(0);
-    var second_cell = row.insertCell(1);
-    var third_cell = row.insertCell(2);
-    first_cell.innerHTML = sender[i];
-    second_cell.innerHTML = sub[i];
-     third_cell.innerHTML = date[i];
-    
-        };}
-   
-      
+     //function to get new current messages from message.body 
    $("#0").on('click',(function(){
       $("#body0").dialog({
           width: 500,
           height: 400,
           autoOpen:true,
+          title: "From: " +sender[0],
+          modal:true,
           show: {
               effect:"fade"
           },
           hide: {
               effect:"fade"
           },
-          title: "From: " +sender[0],
+          
           buttons: [ { text: "Close", click: function() { $( this ).dialog( "close" ); } } ] 
       }); 
     }));
@@ -215,33 +194,89 @@
           buttons: [ { text: "Close", click: function() { $( this ).dialog( "close" ); } } ]  
       }); 
     }));
-
+  //create message box
   $("#open_box").on('click',function(){
     $("#box").dialog({
     width: 500,
     height:300,
-    modal:true,
     title: getNewMessage().date,
-    buttons: [ { text: "Close", click: function() { $( this ).dialog( "close" ); } } ]  
+    buttons: [ { text: "Send", click: function() { $( this ).dialog( "close" ); } } ]  
 });
  
 });
 
-  setInterval(function(){
-        add_rows();},10500
-    );
  
+//adding last rows every per second
+ function add_rows(){
+            for (var i = 0; i < 1; i++){
+		var info = new getNewMessage();
+                 
+             
+	 
+               
+                date[i] =info.date;
+                sub[i]= info.subject;
+                sender[i] =info.sender;
+                body[i]=info.body;
   
- 
+   
+   var table = document.getElementById("adder");
+    var row = table.insertRow();
+    var first_cell = row.insertCell(0);
+    var second_cell = row.insertCell(1);
+    var third_cell = row.insertCell(2);
+    first_cell.innerHTML = sender[i];
+    second_cell.innerHTML = sub[i];
+     third_cell.innerHTML = date[i];
+     
+  // var bb=  document.getElementById("adder");
+   document.getElementsByTagName("p")[i].innerHTML = body[i];
+     
+     };} 
+   
+ //adding new rows to table
+ $("#adder").on('click',(function(){
+      $("#add_new_rows").dialog({
+          width: 500,
+          height: 400,
+          autoOpen:true,
+          show: {
+              effect:"fade"
+          },
+          hide: {
+              effect:"fade"
+          },
+          title: "From: " +sender[0],
+          buttons: [ { text: "Close", click: function() { $( this ).dialog( "close" ); } } ] 
+      }); 
+    })); 
+  //adding rows every time
+   setInterval(function(){
+    
+        add_rows();},5000
+    );
+    
+  var num =10;
+        
+      function row_count(){
+     num++;
+     document.getElementById("up").innerHTML=num;
+ }
+  
+      setInterval(function(){
+          row_count();
+      },5000);
       };
     </script>
-    <title>YAPOO</title>
+    <title>DevLeague</title>
 	</head>
 	<body>
+            
             <button id="open_box">Create Message</button>
-            <textarea id="box" rows="8" cols="49"></textarea>
+            <textarea id="box"  rows="8" cols="49"></textarea>
             <h1>Roman's Gee Mail</h1>
-            <p id="body0"></p>
+            <!-- Where i put the message.body for dialog box -->
+             <p id="body0"></p>
              <p id="body1"></p>
              <p id="body2"></p>
              <p id="body3"></p>
@@ -249,9 +284,9 @@
              <p id="body5"></p>
              <p id="body6"></p>
              <p id="body7"></p>
-               <p id="body8"></p>
+             <p id="body8"></p>
              <p id="body9"></p>
-		 
+		   
             <div class="container"  id="main">
                 
            <table id="0"></table>
@@ -264,10 +299,14 @@
                   <table id="7"></table>
                    <table id="8"></table>
                     <table id="9"></table>
+                    <!-- table for added rows -->
+                    
+                    <table id="adder"></table>
+                     <p id="add_new_rows"></p>
                 
             </div>
           
-          
+           <span>Inbox:</span><div id="up">10</div>
        
           
 	</body>
