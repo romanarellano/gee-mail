@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html> 
 	<head> 
                 <meta charset="utf-8">
 		<script src="js/mail-generator.js"></script>
@@ -47,7 +47,7 @@
           width: 500,
           height: 400,
           autoOpen:true,
-          title: "From: " +sender[0],
+          title: "From: \n" +sender[0] + "Subject: " + sub[0],
           modal:true,
           show: {
               effect:"fade"
@@ -208,6 +208,7 @@
  
 //adding last rows every per second
  function add_rows(){
+    
             for (var i = 0; i < 1; i++){
 		var info = new getNewMessage();
                  
@@ -221,7 +222,7 @@
   
    
    var table = document.getElementById("adder");
-    var row = table.insertRow();
+    var row = table.insertRow(0);
     var first_cell = row.insertCell(0);
     var second_cell = row.insertCell(1);
     var third_cell = row.insertCell(2);
@@ -230,8 +231,8 @@
      third_cell.innerHTML = date[i];
      
   // var bb=  document.getElementById("adder");
-   document.getElementsByTagName("p")[i].innerHTML = body[i];
-     
+  // document.getElementById("add_new_rows").innerHTML = body[i];
+     document.getElementById("add_new_rows").innerHTML = body[i]; 
      };} 
    
  //adding new rows to table
@@ -301,13 +302,13 @@
                     <table id="9"></table>
                     <!-- table for added rows -->
                     
-                    <table id="adder"></table>
-                     <p id="add_new_rows"></p>
+                  
+                  <table id="adder">    <p id="add_new_rows"></p> </table>
                   
             </div>
           
            <span>Inbox:</span><div id="up">10</div>
        
-          
+           
 	</body>
 </html>
